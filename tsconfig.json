@@ -22,6 +22,10 @@
     "es2017",
     "dom"
   ],
+  "awesomeTypescriptLoaderOptions": {
+    "useWebpackText": true,
+    "emitRequireType": true
+  },
   "compileOnSave": false,
   "buildOnSave": false
 }
