@@ -110,31 +110,29 @@ export class DemoSceneComponent {
 		});
 	}
 
-	setStartState() {
-		this.skyState = 'skyStart';
-		this.groundState = 'groundStart';
-		this.sunState = 'sunStart';
-		this.cloudState = 'cloudStart';
-		this.moonState = 'moonStart';
+setStartState() {
+  this.skyState      = 'skyStart';
+  this.groundState   = 'groundStart';
+  this.sunState      = 'sunStart';
+  this.cloudState    = 'cloudStart';
+  this.moonState     = 'moonStart';
 
-	}
+}
+setEndState() {
+    this.skyState       = 'end';
+    this.groundState    = 'end';
+    this.sunState       = 'end';
+    this.cloudState     = 'end';
+    this.moonState      = 'end';
+    this.setupListener();}
 
-	setEndState() {
-		this.skyState = 'end';
-		this.groundState = 'end';
-		this.sunState = 'end';
-		this.cloudState = 'end';
-		this.moonState = 'end';
-		this.setupListener();
-	}
-
-	getAllPlayers(): any {
-		try {
-			return this._ref['_element'].parentView.viewChildren[0].animationPlayers.getAllPlayers();
-		} catch (e) {
-			return [];
-		}
-	}
+getAllPlayers(): any {
+    try {
+      return this._ref['_element'].parentView.viewChildren[0].animationPlayers.getAllPlayers();
+    } catch(e) {
+      return [];
+    }
+  }
 
 	pauseAnimation() {
 		this.getAllPlayers().forEach(player => player.pause());

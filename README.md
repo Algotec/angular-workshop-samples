@@ -10,4 +10,3 @@
 ### Build
 - `npm run build` will output basic build to `dist` folder which
 you can serve from any basic http server.
-

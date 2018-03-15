@@ -10,7 +10,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {ToastModule} from "ng2-toastr";
 
 @NgModule({
-	imports: [BrowserModule, RouterModule.forRoot(routes), MonsterModule, ChatModule, SharedModule, ToastModule.forRoot()],       // module dependencies
+	imports: [BrowserModule, RouterModule.forRoot(routes), ToastModule.forRoot(),MonsterModule, ChatModule, SharedModule, ToastModule.forRoot()],       // module dependencies
 	declarations: [AppComponent, HomeComponent],   // components and directives
 	bootstrap: [AppComponent],     // root component
 })
