@@ -3,25 +3,27 @@ import {ItemsService} from './cart/cart.service';
 
 
 /***************************************/
+
 /*
  template: `
- <peek-a-boo-parent></peek-a-boo-parent>
- <on-changes-parent></on-changes-parent>
- <after-view-parent></after-view-parent>
- <after-content-parent></after-content-parent>
- <spy-parent></spy-parent>
- <counter-parent></counter-parent>
+
  `,
  */
 
 @Component({
 	selector: 'app',
 	template: `
- 	<!--<peek-a-boo-parent></peek-a-boo-parent>-->
- 	<do-check-parent></do-check-parent>
-    <!--<cart-badge [itemStream]="itemsService.items$"></cart-badge>-->
-    <!--<button (click)="addItem()" >Add Item</button>-->
-  `,
+      <peek-a-boo-parent></peek-a-boo-parent>
+      <!--<do-check-parent></do-check-parent>-->
+      <!--<cart-badge [itemStream]="itemsService.items$"></cart-badge>-->
+      <!--<button (click)="addItem()" >Add Item</button>-->
+
+      <!--<on-changes-parent></on-changes-parent>-->
+      <!--<after-view-parent></after-view-parent>-->
+      <!--<after-content-parent></after-content-parent>-->
+      <!--<spy-parent></spy-parent>-->
+      <!--<counter-parent></counter-parent>-->
+	`,
 
 })
 export class AppComponent {

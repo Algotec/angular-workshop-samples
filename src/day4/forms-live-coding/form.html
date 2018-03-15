@@ -1,27 +1,43 @@
 <form novalidate>
-    <md-card>
-        <md-card-title>Registration Form</md-card-title>
-        <md-card-content>
+    <mat-card>
+        <mat-card-title>Registration Form</mat-card-title>
+        <mat-card-content>
             <div class="flex">
-                <md-input placeholder="First name"></md-input>
-                <md-input placeholder="Last name"></md-input>
+                <mat-form-field>
+                    <input matInput placeholder="First name"/>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput required placeholder="Last name"/>
+                </mat-form-field>
             </div>
-            <md-input placeholder="Username"></md-input>
+            <mat-form-field>
+                <input matInput minlength="5" placeholder="Username"/>
+            </mat-form-field>
             <div>
                 <div>
                     <p>Address</p>
-                    <md-input placeholder="Street" required></md-input>
+                    <mat-form-field>
+                        <input matInput required="" placeholder="Street"/>
+                    </mat-form-field>
                     <div class="flex align-center">
-                        <md-input placeholder="City"></md-input>
-                        <select>
-                            <option value="" disabled>Select a state</option>
-                            <option value="CA">CA</option>
-                            <option value="NY">NY</option>
-                        </select>
-                        <md-input placeholder="zip" type="number"></md-input>
+                        <div class="flex align-center">
+                            <mat-form-field>
+                                <input matInput placeholder="City"/>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <mat-select>
+                                    <mat-option value="" disabled>Select a state</mat-option>
+                                    <mat-option value="CA">CA</mat-option>
+                                    <mat-option value="NY">NY</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <input matInput placeholder="zip" type="number"/>
+                            </mat-form-field>
+                        </div>
                     </div>
+                    <!--<button mat-button (click)="addAddress()">ADD ADDRESS</button>-->
                 </div>
-                <!--<button md-button (click)="addAddress()">ADD ADDRESS</button>-->
             </div>
             <p>Would you like a newsletter?</p>
             <label for="yes">
@@ -33,9 +49,9 @@
                 No
             </label>
             <input type="checkbox"> I am not a robot
-        </md-card-content>
-        <md-card-actions align="end">
-            <button md-button color="primary" type="submit">SUBMIT</button>
-        </md-card-actions>
-    </md-card>
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <button mat-button color="primary" type="submit">SUBMIT</button>
+        </mat-card-actions>
+    </mat-card>
 </form>

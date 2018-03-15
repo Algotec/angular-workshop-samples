@@ -10,12 +10,12 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 @Component({
 	selector: 'app',
 	template: `
-    <h1>Handling Forms</h1>
-    <product1></product1>
-    <product2></product2>
-    <product3></product3>
-    <product4></product4>
-    `
+      <h1>Handling Forms</h1>
+      <product1></product1>
+      <product2></product2>
+      <product3></product3>
+      <product4></product4>
+	`
 
 })
 class AppComponent {

@@ -1,5 +1,8 @@
-import {ActionReducer, Action} from '@ngrx/store';
-import {IState} from './state.model';
+import {Action, ActionReducer} from "@ngrx/store";
+
+export interface ActionWithPayload extends Action {
+	payload?: any;
+}
 
 export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';
@@ -13,40 +16,16 @@ export const USER_LOGGED_OUT = "USER_LOGGED_OUT";
 //
 export const ACTIVITY_TIMEOUT_OCCURRED = "ACTIVITY_TIMEOUT_OCCURRED";
 
-export const appReducer: ActionReducer<IState> = (state: IState, action: Action) => {
-    switch (action.type) {
-        case INCREMENT:
-            return {
-                counter: state.counter + 1,
-                loggedIn: state.loggedIn
-            } as IState;
+export const counterReducer: ActionReducer<number> = (counter: number, action: ActionWithPayload): number => {
+	switch (action.type) {
+		case INCREMENT:
+			return counter + (+action.payload);
+		case DECREMENT:
+			return counter--;
+		case RESET:
+			return 0;
+		default:
+			return counter;
+	}
 
-        case DECREMENT:
-            return {
-                counter: state.counter - 1,
-                loggedIn: state.loggedIn
-            } as IState;
-
-        case RESET:
-            return {
-                counter: 0,
-                loggedIn: state.loggedIn
-            } as IState;
-
-        case USER_LOGGED_IN:
-            return {
-                counter: state.counter,
-                loggedIn: true
-            } as IState;
-
-        case USER_LOGGED_OUT:
-        case ACTIVITY_TIMEOUT_OCCURRED:
-            return {
-                counter: state.counter,
-                loggedIn: false
-            } as IState;
-
-        default:
-            return state;
-    }
 }

@@ -1,13 +1,13 @@
 import {Component} from '@angular/core'
 
-import {MyComp} from './my.component';
+import {TrackbyComponent} from './trackby.component';
 import {NodeLoggerDirective} from './node-logger.directive';
 
 @Component({
     selector: 'app',
     template: `
         <h1>Understanding ngForTrackBy</h1>
-        <my-comp></my-comp>
+        <trackby-comp></trackby-comp>
     `,
 })
 class AppComponent {}
@@ -19,7 +19,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   imports: [ BrowserModule ],      
-  declarations: [ AppComponent, MyComp ,NodeLoggerDirective],
+  declarations: [ AppComponent, TrackbyComponent ,NodeLoggerDirective],
   bootstrap: [ AppComponent ],     
   providers: [ ]                   
 })

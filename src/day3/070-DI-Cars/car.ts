@@ -1,5 +1,5 @@
-import {OpaqueToken} from '@angular/core';
-export const CarsCollection = new OpaqueToken('CARS');
+import {InjectionToken} from '@angular/core';
+export const CarsCollection = new InjectionToken('CARS');
 export class Car {
     static nextId = 1;
     public id;

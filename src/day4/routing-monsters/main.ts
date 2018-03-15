@@ -7,12 +7,12 @@ import {HomeComponent} from './home/home.component';
 import {LoginComponent} from './login/login.component';
 import {SharedModule} from './shared/shared.module';
 import {CarsModule} from './car/car.module';
-import {HttpModule} from '@angular/http';
 import {BrowserModule} from '@angular/platform-browser';
 import {MonstersModule} from './monster/monster.module';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
-    imports: [BrowserModule,MonstersModule, SharedModule, CarsModule, RouterModule.forRoot(routes), HttpModule],
+    imports: [BrowserModule,MonstersModule, SharedModule, CarsModule, RouterModule.forRoot(routes), HttpClientModule],
     declarations: [AppComponent, HomeComponent, LoginComponent], //CarDetailComponent,CarListComponent
     bootstrap: [AppComponent],
     providers: []

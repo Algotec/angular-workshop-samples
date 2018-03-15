@@ -1,7 +1,7 @@
-## Angular 2 Workshop Samples
+## Angular Workshop Samples
 
 ### Usage
-- Make sure you have [node.js >= 4.x.x](https://nodejs.org/) installed with npm >= 3.x
+- Make sure you have [node.js >= 8.9.x](https://nodejs.org/) installed with npm >= 3.x
 - run `npm install` to install dependencies.
 - run `npm start` to fire up dev server.
 - open browser to `http://localhost:8080`.
@@ -11,4 +11,3 @@
 - `npm run build` will output basic build to `dist` folder which
 you can serve from any basic http server.
 
-*Angular 2 is in release candidate  and is subject to change.*

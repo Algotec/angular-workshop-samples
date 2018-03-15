@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
-import {Http} from '@angular/http';
 import 'rxjs/add/operator/toPromise';
+import {HttpClient} from "@angular/common/http";
+import {map} from "rxjs/operators";
 
 export class Car {
 	constructor(public id: number, public name: string) {
@@ -18,7 +19,7 @@ const CARS = [
 export class CarService {
 	carsPromise: Promise<Car[]>// = Promise.resolve(CARS);
 
-	constructor(private http: Http) {
+	constructor(private http: HttpClient) {
 
 	}
 
@@ -26,9 +27,8 @@ export class CarService {
 		//return this.carsPromise;
 		if (!this.carsPromise) {
 			this.carsPromise = this.http.get('data/cars.json')
-				.map(res => res.json())
-				.map(json => json.data)
-				.toPromise();
+				.pipe(map((json: any) => json.data)).toPromise()
+
 		}
 		return this.carsPromise;
 	}

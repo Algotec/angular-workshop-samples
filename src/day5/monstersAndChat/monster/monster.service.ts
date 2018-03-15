@@ -1,14 +1,13 @@
 import {Injectable} from '@angular/core';
-import {Http} from '@angular/http';
-import 'rxjs/add/operator/toPromise';
 import {MonsterModel} from './monster.model';
+import {HttpClient} from "@angular/common/http";
 
 @Injectable()
 export class MonsterService {
 
 	private baseUrl = 'http://localhost:3003/data/monster/';
 
-	constructor(private http: Http) {
+	constructor(private http: HttpClient) {
 	}
 
 
@@ -21,9 +20,8 @@ export class MonsterService {
 
 		return this.http.get(this.baseUrl)
 			.toPromise()
-			.then(res => {
-				const jsonMonsters = res.json();
-				return jsonMonsters.map((jsonMonster: any) =>
+			.then((res: any) => {
+				return res.map((jsonMonster: any) =>
 					new MonsterModel(jsonMonster));
 			}).catch(err => {
 				console.log('MonsterService::query - Problem talking to server');
@@ -32,12 +30,11 @@ export class MonsterService {
 	}
 
 	// get (GETs a single)
-	get(id: string): Promise<MonsterModel> {
+	get(id: string): Promise<MonsterModel | void> {
 		return this.http.get(this.baseUrl + id)
 			.toPromise()
-			.then(res => {
-				const jsonMonster = res.json();
-				return new MonsterModel(jsonMonster);
+			.then((res: any) => {
+				return new MonsterModel(res);
 			}).catch(err => {
 				console.log('MonsterService::get - Problem talking to server');
 			});
@@ -48,7 +45,7 @@ export class MonsterService {
 	remove(id: string): Promise<MonsterModel[]> {
 		let prmMonster = this.http.delete(this.baseUrl + id)
 			.toPromise()
-			.then(res => {
+			.then((res: any) => {
 				return this.query();
 			});
 
@@ -74,8 +71,7 @@ export class MonsterService {
 
 		prmMonster = response.toPromise()
 			.then((res: any) => {
-				const jsonMonster = res.json();
-				return new MonsterModel(jsonMonster);
+				return new MonsterModel(res);
 			});
 
 		prmMonster.catch(err => {

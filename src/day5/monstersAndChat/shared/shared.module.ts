@@ -4,7 +4,8 @@ import {ReactiveFormsModule, FormsModule} from '@angular/forms';
 import {ToastModule} from 'ng2-toastr';
 import {FileDropDirective, FileSelectDirective} from 'ng2-file-upload';
 import {CommonModule} from '@angular/common';
-let sharedModules = [CommonModule, FormsModule, ReactiveFormsModule, HttpModule, ToastModule];
+import {HttpClientModule} from "@angular/common/http";
+let sharedModules = [CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule, ToastModule];
 let commonPipes = [];
 let commonDirectives = [FileDropDirective, FileSelectDirective];
 

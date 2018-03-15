@@ -11,7 +11,7 @@ form {
     justify-content: center;
 }
 
-md-card {
+mat-card {
     width: 500px;
 }
 
@@ -31,15 +31,15 @@ md-card {
     justify-content: center;
 }
 
-md-input {
+mat-input {
     width: 100%;
 }
 
-md-input, label, select {
+mat-input, label, select {
     margin-right: 8px;
 }
 
-md-input:last-child {
+mat-input:last-child {
     margin-right: 0;
 }
 

@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
-import {Http} from '@angular/http';
-
+import {HttpClient} from "@angular/common/http";
+import {map} from "rxjs/operators";
 export class Monster {
 	constructor(public id: number, public name: string) {
 	}
@@ -18,15 +18,14 @@ var monsters = [
 @Injectable()
 export class MonsterService {
 	monstersPromise: Promise<Monster[]>;  //= Promise.resolve(monsters);
-	constructor(private http: Http) {
+	constructor(private http: HttpClient) {
 	}
 
 	getMonsters() {
 		//return this.monstersPromise;
 		if (!this.monstersPromise) {
 			this.monstersPromise = this.http.get('data/monsters.json')
-				.map(res => res.json())
-				.map(json => json.data)
+				.pipe(map((json:any) => json.data))
 				.toPromise();
 		}
 		return this.monstersPromise;

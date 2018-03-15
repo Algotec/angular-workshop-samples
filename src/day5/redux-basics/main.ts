@@ -40,7 +40,7 @@ export class AppComponent {
 @NgModule({
     declarations: [AppComponent],
     imports: [BrowserModule],
-    providers: [{provide: 'store', useValue: createStore(appReducer)}], ///////// either use createRxStore(appReducer) or createStore(appReducer) - they provide with the same API
+    providers: [{provide: 'store', useValue: createStore(appReducer)}], ///////// either use createRxStore(counterReducer) or createStore(counterReducer) - they provide with the same API
     bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -2,6 +2,7 @@ import {Component, ViewEncapsulation, NgModule} from '@angular/core';
 import {DemoStatesComponent} from './demo-states.component';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @Component({
     selector: 'app',
@@ -15,7 +16,7 @@ class AppComponent {}
 
 
 @NgModule({
-  imports: [ BrowserModule],      
+  imports: [ BrowserModule,BrowserAnimationsModule],
   declarations: [ AppComponent, DemoStatesComponent],   
   bootstrap: [ AppComponent ],     
   providers: [ ]                   

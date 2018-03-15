@@ -8,7 +8,7 @@ import {AfterContentInit, QueryList,ContentChildren} from '@angular/core';
 
 
 @Component({
-  selector: 'my-comp',
+  selector: 'trackby-comp',
   template: `
       <p>
         <a (click)="shuffleCollections()">Shuffle collections</a>.
@@ -26,7 +26,7 @@ import {AfterContentInit, QueryList,ContentChildren} from '@angular/core';
         </li>
       </ul>`
 })
-export class MyComp {
+export class TrackbyComponent {
   friends;
   enemies;
   

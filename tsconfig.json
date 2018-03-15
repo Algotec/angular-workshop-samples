@@ -1,30 +1,27 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "es5",
-    "outDir": "dist",
-    "rootDir": ".",
+    "module": "es2015",
+    "target": "es6",
     "sourceMap": true,
+    "importHelpers": true,
+    "noEmitHelpers": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "baseUrl": "./src",
+    "typeRoots": [
+      "./node_modules/@types"
+    ]
   },
   "exclude": [
     "node_modules"
   ],
-  "types": [
-    "jasmine",
-    "hammerjs",
-    "webpack",
-    "uglifyjs",
-    "core-js",
-    "node",
-    "socket.io-client"
+  "lib": [
+    "es2015",
+    "es2016",
+    "es2017",
+    "dom"
   ],
-  "awesomeTypescriptLoaderOptions": {
-    "useWebpackText": true,
-    "emitRequireType":true
-  },
   "compileOnSave": false,
   "buildOnSave": false
 }
