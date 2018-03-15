@@ -1,8 +1,9 @@
 import {Component} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {Store} from '@ngrx/store';
-import {INCREMENT, DECREMENT, RESET, USER_LOGGED_IN, USER_LOGGED_OUT} from './app.reducer';
+import {INCREMENT, DECREMENT, RESET} from './coutner.reducer';
 import {IState} from './state.model';
+import {USER_LOGGED_OUT, USER_LOGGED_IN} from "./login.reducer";
 
 @Component({
 	selector: 'app',

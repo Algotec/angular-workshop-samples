@@ -1,10 +1,10 @@
 import {Action} from "@ngrx/store";
-import {User} from "./state.model";
-import {ActionWithPayload} from "./app.reducer";
+import {initialState, User} from "./state.model";
+import {ActionWithPayload} from "./main";
 
 export type UserState = User[];
 
-export function usersRecuder(state: UserState, action: ActionWithPayload): UserState {
+export function usersRecuder(state: UserState = initialState.users, action: ActionWithPayload): UserState {
 	switch (action.type) {
 		case 'ADD_USER':
 			return [...state, {firstName: action.payload}];

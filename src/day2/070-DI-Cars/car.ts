@@ -1,7 +1,6 @@
 import {InjectionToken} from '@angular/core';
 
 export const CarsCollectionToken = new InjectionToken('CARS');
-
 export class Car {
 	static nextId = 1;
 	public id;

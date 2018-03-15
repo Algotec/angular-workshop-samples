@@ -10,7 +10,7 @@ import {DateItPipe} from './dateIt.pipe';
     template: `
          <div>
       Date: {{ today }} <br>
-      ShortDate: {{ today | date: shortdate }} 
+      ShortDate: {{ today | date }} 
       <hr>
       MyDate: {{ today | dateIt }}
       
