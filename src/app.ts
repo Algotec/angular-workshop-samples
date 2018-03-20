@@ -22,7 +22,7 @@
  *********/
 
 
-import "./day3/081-InjectingPipe/main";
+// import "./day3/081-InjectingPipe/main";
 // import "./day3/010-CustomDirectives/main";
 // import "./day3/050-Collapse-ContentProjection/main";
 // import "./day3/015-refToViewChildren/main";
@@ -61,8 +61,10 @@ import "./day3/081-InjectingPipe/main";
 // import './day5/redux_pattern_logout_timer/main';
 // import "./day5/CustomElementInterop/main";
 // import './day5/setDocmentTitle/main';
-// import './day5/monstersAndChat/main';
+
 // import "./day5/animate-samples/demo1/main";
 // import "./day5/animate-samples/demo-states/main";
 // import "./day5/animate-samples/demo-scene/main"; //todo : broken needs fixing
 // import './day5/notifications_panel_animations/main';
+
+import './day6/monstersAndChat/main';
