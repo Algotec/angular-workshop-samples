@@ -2,7 +2,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {JsonpModule} from '@angular/http';
+import {HttpClientModule, HttpClientJsonpModule} from '@angular/common/http';
 //this
 import {WikipediaService} from './wikipedia-service';
 import {App} from './app';
@@ -14,7 +14,7 @@ import {App} from './app';
 
 
 @NgModule({
-	imports: [BrowserModule, FormsModule, ReactiveFormsModule, JsonpModule],
+	imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpClientJsonpModule, HttpClientModule],
 	declarations: [App],
 	bootstrap: [App],
 	providers: [WikipediaService]

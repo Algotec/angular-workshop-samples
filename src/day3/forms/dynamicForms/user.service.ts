@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {FormBase, TextboxField, DropdownField} from './dynamic-form';
+import {FormBase, TextboxField, DropdownField} from './dynamic-form/index';
 
 ////////////////////////////////////////////////////////////////////////
 

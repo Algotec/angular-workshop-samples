@@ -1,6 +1,6 @@
 import {Component, NgModule} from '@angular/core';
 import {DynamicFormsExampleAppComponent} from './dynamic-forms-example.component';
-import {DynamicFormFieldComponent, FormControlService} from './dynamic-form';
+import {DynamicFormFieldComponent, FormControlService} from './dynamic-form/index';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {BrowserModule} from '@angular/platform-browser';
 import {ReactiveFormsModule} from '@angular/forms';
