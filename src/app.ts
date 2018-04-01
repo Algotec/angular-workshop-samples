@@ -23,7 +23,7 @@
 
 
 
-import "./day3/Directives/010-CustomDirectives/main";
+// import "./day3/Directives/010-CustomDirectives/main";
 // import "./day3/Directives/050-Collapse-ContentProjection/main";
 // import "./day3/Directives/015-refToViewChildren/main";
 // import "./day3/Directives/016-refToContentChildren/main";
@@ -38,7 +38,7 @@ import "./day3/Directives/010-CustomDirectives/main";
 /**********
  Day3 - Forms
  *********/
-// import "./day3/forms/040-MonsterForm/main";
+import "./day3/forms/040-MonsterForm/main";
 // import "./day3/forms/forms-live-coding-template-driven/main";
 // import './day3/forms/forms-live-coding-model-driven/main';
 // import "./day3/forms/forms-live-coding/main";
