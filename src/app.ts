@@ -3,7 +3,7 @@
  *********/
 // import './day1/000-Tries/main';
 // import './day1/pets/main';
-import './day1/rxjs/wikipediaSearch/main';
+// import './day1/rxjs/wikipediaSearch/main';
 /**********
  Day2
  *********/
@@ -22,8 +22,8 @@ import './day1/rxjs/wikipediaSearch/main';
  *********/
 
 
-// import "./day3/Directives/081-InjectingPipe/main";
-// import "./day3/Directives/010-CustomDirectives/main";
+
+import "./day3/Directives/010-CustomDirectives/main";
 // import "./day3/Directives/050-Collapse-ContentProjection/main";
 // import "./day3/Directives/015-refToViewChildren/main";
 // import "./day3/Directives/016-refToContentChildren/main";
@@ -32,6 +32,8 @@ import './day1/rxjs/wikipediaSearch/main';
 // import "./day3/Directives/056-Tabs-ContentProjection2/main";
 // import "./day3/Directives/056-Tabs-ContentProjection3-addTab/main";
 // import "./day3/Directives/080-ngForTrackBy/main";
+// import "./day3/Directives/081-InjectingPipe/main";
+// import "./day3/Directives/090-ngTemplateOutlet/main";
 //
 /**********
  Day3 - Forms

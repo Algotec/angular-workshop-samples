@@ -14,7 +14,7 @@ class AppComponent {
     data = {val : 99}
 
     constructor() {
-        setTimeout(()=>this.data.val=111, 1000);
+        setTimeout(()=>this.data.val=211, 2000);
     }
     counterChanged($event){
         console.log('counter value: ' , $event);

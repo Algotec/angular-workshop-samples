@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 	selector: 'demo-builtin-directives',
 	styles: [`
 	  .active {
-		  color: red
+		  color: red;
 	  }`,
 			`.disabled {
 		  background: grey
@@ -40,7 +40,7 @@ export class DemoBuiltinDirectives {
 	size = '20px';
 	isOn = true;
 	isDisabled = false;
-	toeChoice = 'Moe';
+	toeChoice = 'adadad';
 
 	changeStyle($event: any) {
 		this.style = $event.target.checked ? 'italic' : 'normal';

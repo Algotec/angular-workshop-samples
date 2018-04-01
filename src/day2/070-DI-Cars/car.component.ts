@@ -6,6 +6,7 @@ import {TestSvc} from './common/test.service';
 @Component({
 	selector: 'car-detail',
 	styles: ['img {max-width:200px;}'],
+	providers:[TestSvc],
 	template: `
   <div class="car">
     <h2>Car: {{car.plate}} <button (click)="deleteCar()">X</button> </h2>

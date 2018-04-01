@@ -20,7 +20,7 @@ class AppComponent {
 	imports: [BrowserModule],
 	declarations: [AppComponent, CarsComponent, CarComponent],
 	bootstrap: [AppComponent],
-	providers: [TestSvc]
+	providers: []
 })
 export class AppModule {
 }
