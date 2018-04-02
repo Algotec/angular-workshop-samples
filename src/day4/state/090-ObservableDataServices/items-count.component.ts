@@ -3,7 +3,8 @@ import {MyService} from './my-service';
 
 @Component({
   selector: 'items-count',
-  // changeDetection: ChangeDetectionStrategy.OnPush,
+  // changeDetection: ChangeDetectionStrategy.OnPush, // when you enable this you will also need the line below
+  // or (better) use the async pipe
   template: `
     <div class="badge pull-right">
       <h2>{{count}}</h2>

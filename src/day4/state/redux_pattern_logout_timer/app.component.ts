@@ -5,6 +5,7 @@ import {INCREMENT, DECREMENT, RESET} from './coutner.reducer';
 import {IState} from './state.model';
 import {USER_LOGGED_OUT, USER_LOGGED_IN} from "./login.reducer";
 
+
 @Component({
 	selector: 'app',
 	styles: [`
@@ -37,7 +38,7 @@ import {USER_LOGGED_OUT, USER_LOGGED_IN} from "./login.reducer";
 
       <div class="flex-col">
           <span>Counter: {{counter$ | async}}</span>
-          <input type="text" #kamaElement (keyup.Enter)="addToCount(kamaElement.value)"/>
+          <input type="text" #kamaElement [disabled]="!(loggedIn$ | async)" (keyup.Enter)="addToCount(kamaElement.value)"/>
           <div class="flex-row">
               <button (click)="decrement()" [disabled]="!(loggedIn$ | async)">Decrement</button>
               <button (click)="reset()" [disabled]="!(loggedIn$ | async)">Reset</button>
