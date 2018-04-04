@@ -1,30 +1,33 @@
 import {Injectable, Inject} from '@angular/core';
 import {Observable} from 'rxjs/Rx';
-import {BehaviorSubject} from 'rxjs';
+import {ReplaySubject} from 'rxjs/ReplaySubject';
 
 
 @Injectable()
 export class ChatRoomService {
 	// url$ = Observable.of('https://socket-chat-example-qsaokhakmv.now.sh/');
 	url = 'http://localhost:3003';
-	private socket$: BehaviorSubject<any>;
+	private socket$: ReplaySubject<any>;
 	public connected$: any;
 	public messages$: any;
 
 	constructor(@Inject('io') private io: SocketIOClientStatic) {
 
-		this.socket$ = new BehaviorSubject(undefined);
+		this.socket$ = new ReplaySubject(1)
 
 		this.messages$ = this.socket$
 			.switchMap(socket => Observable.fromEvent(socket, 'chat message'))
 			.startWith([])
-			.scan((acc, curr)=> [...<string[]>acc, curr]);
+			.scan((acc, curr) => [...<string[]>acc, curr]);
 
 		const disconnect$ = this.socket$
 			.switchMap(socket => Observable.fromEvent(socket, 'disconnect'));
 
 		const connect$ = this.socket$
-			.switchMap(socket => Observable.fromEvent(socket, 'connect'));
+			.switchMap(socket => {
+					return Observable.fromEvent(socket, 'connect');
+				}
+			);
 
 		this.connected$ = Observable.merge(
 			connect$.mapTo(true),
@@ -39,20 +42,20 @@ export class ChatRoomService {
 	}
 
 	send(message) {
-		this.socket$.subscribe((socket)=> {
+		this.socket$.subscribe((socket) => {
 			socket.emit('chat message', message);
 		});
 	}
 
 	toggleConnectionStatus() {
-		this.socket$.subscribe(socket=> {
+		this.socket$.subscribe(socket => {
 			socket.disconnected ? socket.connect() : socket.disconnect();
 		});
 
 	}
 
 	disconnect() {
-		this.socket$.subscribe(socket=> {
+		this.socket$.subscribe(socket => {
 			socket.disconnect();
 		});
 	}
