@@ -1,4 +1,4 @@
-import {Component, ViewContainerRef} from '@angular/core';
+import {Component, ViewChild, ViewContainerRef} from '@angular/core';
 import {trigger, style, animate, transition, keyframes} from "@angular/animations";
 
 @Component({
@@ -14,7 +14,7 @@ import {trigger, style, animate, transition, keyframes} from "@angular/animation
           </button>
 
       </nav>
-      <div id="sky" [@sceneState]="skyState">
+      <div id="sky" [@sceneState]="skyState" #sceneState>
 
           <div id="cloud" [@sceneState]="cloudState">
               <div class="cloud cloud-1"></div>
@@ -22,7 +22,7 @@ import {trigger, style, animate, transition, keyframes} from "@angular/animation
               <div class="cloud cloud-3"></div>
           </div>
 
-          <div id="sun" [@sceneState]="sunState"></div>
+          <div id="sun" [@sunState]="sunState"></div>
 
           <div id="moon" [@sceneState]="moonState">
               <div class="moon">
@@ -39,10 +39,6 @@ import {trigger, style, animate, transition, keyframes} from "@angular/animation
 
 	animations: [
 		trigger('sceneState', [
-			// state('void', style({ top: '0', left: '0'})),
-			// state('start', style({})),
-			// state('end', style({})),
-
 			transition('skyStart => end', [
 				animate('10s ease', keyframes([
 					style({'background': '#525252'}),
@@ -59,6 +55,8 @@ import {trigger, style, animate, transition, keyframes} from "@angular/animation
 					style({'background': '#6c5228'})
 				]))
 			]),
+		]),
+		trigger('sunState', [
 			transition('sunStart => end', [
 				animate('10s ease-in', keyframes([
 					style({'background': '#f00', 'bottom': 0, 'left': 340}),
@@ -84,14 +82,15 @@ import {trigger, style, animate, transition, keyframes} from "@angular/animation
 				]))
 			]),
 
-			// transition('end => *', [animate(2000)]),
-			transition('end => *', [
-				style({transform: 'translate3d(-100%, 0, 0)'}),
-				animate('350ms ease-out')
-			])
+// transition('end => *', [animate(2000)]),
+// transition('end => *', [
+// 	style({transform: 'translate3d(-100%, 0, 0)'}),
+// 	animate('350ms ease-out')
+// ])
 		])
 	]
 })
+
 export class DemoSceneComponent {
 	private skyState;
 	private groundState;
@@ -102,6 +101,7 @@ export class DemoSceneComponent {
 	private _listeners = [];
 	public paused = false;
 	public animationsRunning = true;
+	@ViewChild('sceneState', {read: ViewContainerRef}) player: ViewContainerRef;
 
 	constructor(private _ref: ViewContainerRef) {
 		this.setStartState();
@@ -110,29 +110,27 @@ export class DemoSceneComponent {
 		});
 	}
 
-setStartState() {
-  this.skyState      = 'skyStart';
-  this.groundState   = 'groundStart';
-  this.sunState      = 'sunStart';
-  this.cloudState    = 'cloudStart';
-  this.moonState     = 'moonStart';
+	setStartState() {
+		this.skyState = 'skyStart';
+		this.groundState = 'groundStart';
+		this.sunState = 'sunStart';
+		this.cloudState = 'cloudStart';
+		this.moonState = 'moonStart';
 
-}
-setEndState() {
-    this.skyState       = 'end';
-    this.groundState    = 'end';
-    this.sunState       = 'end';
-    this.cloudState     = 'end';
-    this.moonState      = 'end';
-    this.setupListener();}
+	}
 
-getAllPlayers(): any {
-    try {
-      return this._ref['_element'].parentView.viewChildren[0].animationPlayers.getAllPlayers();
-    } catch(e) {
-      return [];
-    }
-  }
+	setEndState() {
+		this.skyState = 'end';
+		this.groundState = 'end';
+		this.sunState = 'end';
+		this.cloudState = 'end';
+		this.moonState = 'end';
+		// this.setupListener();
+	}
+
+	getAllPlayers(): any {
+		return [(this.player.injector as any).view.renderer.delegate.factory.engine.players[0]];
+	}
 
 	pauseAnimation() {
 		this.getAllPlayers().forEach(player => player.pause());

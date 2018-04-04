@@ -1,7 +1,7 @@
 /**********
  Day1
  *********/
-// import './day1/000-Tries/main';
+import './day1/000-Tries/main';
 // import './day1/pets/main';
 // import './day1/rxjs/wikipediaSearch/main';
 /**********
@@ -53,7 +53,7 @@
 /**********
  Day3 - Routing
  *********/
-import './day3/monstersAndChat/main';
+// import './day3/monstersAndChat/main';
 /**********
  Day4
  *********/
